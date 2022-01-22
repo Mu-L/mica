@@ -1,0 +1,3 @@
+# TinyLog Logging Systems
+org.springframework.boot.logging.LoggingSystemFactory=\
+net.dreamlu.mica.tinylog.core.TinyLogLoggingSystem.Factory

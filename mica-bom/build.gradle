@@ -30,6 +30,7 @@ dependencyManagement {
         dependency "net.dreamlu:mica-metrics:${VERSION}"
         dependency "net.dreamlu:mica-caffeine:${VERSION}"
         dependency "net.dreamlu:mica-logging:${VERSION}"
+        dependency "net.dreamlu:mica-tinylog:${VERSION}"
         dependency "net.dreamlu:mica-qrcode:${VERSION}"
         dependency "net.dreamlu:mica-jetcache:${VERSION}"
         dependency "net.dreamlu:mica-lite:${VERSION}"
