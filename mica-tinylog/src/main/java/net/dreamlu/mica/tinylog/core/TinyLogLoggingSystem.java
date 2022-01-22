@@ -19,7 +19,6 @@ package net.dreamlu.mica.tinylog.core;
 import org.springframework.boot.context.properties.bind.Bindable;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.boot.logging.*;
-import org.springframework.boot.logging.logback.LogbackLoggingSystem;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
 import org.springframework.util.ClassUtils;
@@ -62,18 +61,18 @@ public class TinyLogLoggingSystem extends Slf4JLoggingSystem {
 	}
 
 	/**
-	 * {@link LoggingSystemFactory} that returns {@link LogbackLoggingSystem} if possible.
+	 * {@link LoggingSystemFactory} that returns {@link TinyLogLoggingSystem} if possible.
 	 */
 	@Order
 	public static class Factory implements LoggingSystemFactory {
 
 		private static final boolean PRESENT = ClassUtils.isPresent("org.tinylog.Logger",
-			LogbackLoggingSystem.Factory.class.getClassLoader());
+			TinyLogLoggingSystem.Factory.class.getClassLoader());
 
 		@Override
 		public LoggingSystem getLoggingSystem(ClassLoader classLoader) {
 			if (PRESENT) {
-				return new LogbackLoggingSystem(classLoader);
+				return new TinyLogLoggingSystem(classLoader);
 			}
 			return null;
 		}
